@@ -1,0 +1,30 @@
+/*
+ * Copyright (c) 2022 Rumbledethumps
+ *
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+
+.program ria_addr_data
+
+pull
+mov x osr
+.wrap_target
+mov isr x
+wait 0 gpio 21 [2] ; [2]=120MHz [5]=240MHz
+in pins 5
+out pins 8
+.wrap
+
+.program ria_addr_watch
+
+addr_changed:
+mov isr null
+in pins 5
+mov y isr
+push noblock
+.wrap_target
+mov isr null
+in pins 5
+mov x isr
+jmp x!=y addr_changed
+.wrap
