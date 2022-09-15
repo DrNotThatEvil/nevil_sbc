@@ -4,7 +4,10 @@ add_executable(nevil_sbc_vga)
 pico_generate_pio_header(nevil_sbc_vga
     ${CMAKE_CURRENT_SOURCE_DIR}/vga.pio)
 
-target_sources(nevil_sbc_vga PUBLIC
+pico_generate_pio_header(nevil_sbc_vga
+    ${CMAKE_CURRENT_SOURCE_DIR}/bus.pio)
+
+    target_sources(nevil_sbc_vga PUBLIC
    main.c
    buffers.c
    render.c
