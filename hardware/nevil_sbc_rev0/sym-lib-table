@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name "65xx")(type "Legacy")(uri "${KIPRJMOD}/libs/65xx/65xx.lib")(options "")(descr "65xx library"))
+  (lib (name "RPPico")(type "KiCad")(uri "${KIPRJMOD}/libs/RPPico/MCU_RaspberryPi_and_Boards.kicad_sym")(options "")(descr "Legacy"))
+)

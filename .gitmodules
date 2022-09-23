@@ -1,0 +1,3 @@
+[submodule "hardware/nevil_sbc_rev0/libs/65xx"]
+	path = hardware/nevil_sbc_rev0/libs/65xx
+	url = git@github.com-personal:Alarm-Siren/6502-kicad-library.git
