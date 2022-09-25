@@ -1318,6 +1318,93 @@
         )
       )
     )
+    (symbol "MCU_Microchip_ATtiny:ATtiny84-20P" (in_bom yes) (on_board yes)
+      (property "Reference" "U" (id 0) (at -12.7 21.59 0)
+        (effects (font (size 1.27 1.27)) (justify left bottom))
+      )
+      (property "Value" "ATtiny84-20P" (id 1) (at 2.54 -21.59 0)
+        (effects (font (size 1.27 1.27)) (justify left top))
+      )
+      (property "Footprint" "Package_DIP:DIP-14_W7.62mm" (id 2) (at 0 0 0)
+        (effects (font (size 1.27 1.27) italic) hide)
+      )
+      (property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/doc8006.pdf" (id 3) (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_keywords" "AVR 8bit Microcontroller tinyAVR" (id 4) (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "20MHz, 8kB Flash, 512B SRAM, 512B EEPROM, debugWIRE, DIP-14" (id 5) (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_fp_filters" "DIP*W7.62mm*" (id 6) (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "ATtiny84-20P_0_1"
+        (rectangle (start -12.7 -20.32) (end 12.7 20.32)
+          (stroke (width 0.254) (type default) (color 0 0 0 0))
+          (fill (type background))
+        )
+      )
+      (symbol "ATtiny84-20P_1_1"
+        (pin power_in line (at 0 22.86 270) (length 2.54)
+          (name "VCC" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+        (pin bidirectional line (at 15.24 7.62 180) (length 2.54)
+          (name "PA3" (effects (font (size 1.27 1.27))))
+          (number "10" (effects (font (size 1.27 1.27))))
+        )
+        (pin bidirectional line (at 15.24 10.16 180) (length 2.54)
+          (name "PA2" (effects (font (size 1.27 1.27))))
+          (number "11" (effects (font (size 1.27 1.27))))
+        )
+        (pin bidirectional line (at 15.24 12.7 180) (length 2.54)
+          (name "PA1" (effects (font (size 1.27 1.27))))
+          (number "12" (effects (font (size 1.27 1.27))))
+        )
+        (pin bidirectional line (at 15.24 15.24 180) (length 2.54)
+          (name "AREF/PA0" (effects (font (size 1.27 1.27))))
+          (number "13" (effects (font (size 1.27 1.27))))
+        )
+        (pin power_in line (at 0 -22.86 90) (length 2.54)
+          (name "GND" (effects (font (size 1.27 1.27))))
+          (number "14" (effects (font (size 1.27 1.27))))
+        )
+        (pin bidirectional line (at 15.24 -7.62 180) (length 2.54)
+          (name "XTAL1/PB0" (effects (font (size 1.27 1.27))))
+          (number "2" (effects (font (size 1.27 1.27))))
+        )
+        (pin bidirectional line (at 15.24 -10.16 180) (length 2.54)
+          (name "XTAL2/PB1" (effects (font (size 1.27 1.27))))
+          (number "3" (effects (font (size 1.27 1.27))))
+        )
+        (pin bidirectional line (at 15.24 -15.24 180) (length 2.54)
+          (name "~{RESET}/PB3" (effects (font (size 1.27 1.27))))
+          (number "4" (effects (font (size 1.27 1.27))))
+        )
+        (pin bidirectional line (at 15.24 -12.7 180) (length 2.54)
+          (name "PB2" (effects (font (size 1.27 1.27))))
+          (number "5" (effects (font (size 1.27 1.27))))
+        )
+        (pin bidirectional line (at 15.24 -2.54 180) (length 2.54)
+          (name "PA7" (effects (font (size 1.27 1.27))))
+          (number "6" (effects (font (size 1.27 1.27))))
+        )
+        (pin bidirectional line (at 15.24 0 180) (length 2.54)
+          (name "PA6" (effects (font (size 1.27 1.27))))
+          (number "7" (effects (font (size 1.27 1.27))))
+        )
+        (pin bidirectional line (at 15.24 2.54 180) (length 2.54)
+          (name "PA5" (effects (font (size 1.27 1.27))))
+          (number "8" (effects (font (size 1.27 1.27))))
+        )
+        (pin bidirectional line (at 15.24 5.08 180) (length 2.54)
+          (name "PA4" (effects (font (size 1.27 1.27))))
+          (number "9" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
     (symbol "Memory_EEPROM:28C256" (in_bom yes) (on_board yes)
       (property "Reference" "U" (id 0) (at -7.62 26.67 0)
         (effects (font (size 1.27 1.27)))
@@ -4406,6 +4493,37 @@
     (pin "1" (uuid 2ceae7bf-ebd3-4790-b427-53105ecad054))
   )
 
+  (symbol (lib_id "MCU_Microchip_ATtiny:ATtiny84-20P") (at -129.54 -15.24 0) (unit 1)
+    (in_bom yes) (on_board yes) (fields_autoplaced)
+    (uuid cc9b90a5-0c43-45c2-9570-29adffdd5447)
+    (property "Reference" "U?" (id 0) (at -142.24 -16.5101 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+    )
+    (property "Value" "ATtiny84-20P" (id 1) (at -142.24 -13.9701 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+    )
+    (property "Footprint" "Package_DIP:DIP-14_W7.62mm" (id 2) (at -129.54 -15.24 0)
+      (effects (font (size 1.27 1.27) italic) hide)
+    )
+    (property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/doc8006.pdf" (id 3) (at -129.54 -15.24 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 42ccb374-a846-4080-a830-3a1db4ea4850))
+    (pin "10" (uuid 6dc962e3-4b64-484e-9cfd-10aa2fd0d409))
+    (pin "11" (uuid fa6b22e7-2153-4015-aa54-1722a6014aac))
+    (pin "12" (uuid c7e23d2d-6ded-4ad6-840b-e2991cfd4f0a))
+    (pin "13" (uuid b7ed2f5a-d02e-4dc6-b16f-4472aaee6abd))
+    (pin "14" (uuid f14b04d7-3815-42a0-834b-94c8e4522e9c))
+    (pin "2" (uuid 9c54b727-f285-4e5e-9c12-a8101f9d2274))
+    (pin "3" (uuid 975b5452-7f30-48d1-a105-162c9e24c973))
+    (pin "4" (uuid bfb39dee-dc70-4bae-a85a-2badc335d0e7))
+    (pin "5" (uuid 0178b79d-392e-4752-8ee7-17a4267c1447))
+    (pin "6" (uuid 7444d575-1b5e-4d3f-9ca4-40c852adfd63))
+    (pin "7" (uuid 5ff7cfad-959a-44ff-93c6-95f08d10f9be))
+    (pin "8" (uuid 0102135f-903b-4827-a7d7-8782a41ecc80))
+    (pin "9" (uuid 8a16c131-3b3b-47c4-950d-02c557a4f117))
+  )
+
   (symbol (lib_id "65xx:W65C22SxP") (at -33.02 133.35 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid ccd14c08-c4ab-4f62-97cd-05242c97da30)
@@ -4772,8 +4890,21 @@
     (pin "2" (uuid 2fae4f18-e51b-4bec-b48e-481c75d1888c))
   )
 
+  (sheet (at 204.47 41.91) (size 22.86 16.51) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid) (color 0 0 0 0))
+    (fill (color 0 0 0 0.0000))
+    (uuid 47e5f244-199c-483d-9129-db89de2f9ca8)
+    (property "Sheet name" "Peripherals" (id 0) (at 204.47 41.1984 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheet file" "peripherals.kicad_sch" (id 1) (at 204.47 59.0046 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+  )
+
   (sheet_instances
     (path "/" (page "1"))
+    (path "/47e5f244-199c-483d-9129-db89de2f9ca8" (page "2"))
   )
 
   (symbol_instances
@@ -4885,7 +5016,13 @@
     (path "/c56075fd-458a-4ab1-9faf-ee195a2b3619"
       (reference "C?") (unit 1) (value "0.1uF") (footprint "")
     )
+    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/e348be46-6574-4ba9-9966-1c4b0473ed8c"
+      (reference "C?") (unit 1) (value "0.1uF") (footprint "")
+    )
     (path "/e8e20204-7e9c-48ca-8281-0e72ee50389b"
+      (reference "C?") (unit 1) (value "1000uF") (footprint "")
+    )
+    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/ea7ac4dc-6ee8-44f6-a134-d247f2e45705"
       (reference "C?") (unit 1) (value "1000uF") (footprint "")
     )
     (path "/156bb2ef-c9f6-4267-a4cd-6be6db8068ad"
@@ -4902,6 +5039,9 @@
     )
     (path "/7abb35fb-6689-4446-a614-d226f9e33443"
       (reference "R?") (unit 1) (value "1K") (footprint "")
+    )
+    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/bc2118bf-1e52-473f-86e1-9d70f2c0a7cd"
+      (reference "R?") (unit 1) (value "R_Small") (footprint "")
     )
     (path "/c3b26662-b508-402c-a774-e93a5a47c493"
       (reference "R?") (unit 1) (value "1K") (footprint "")
@@ -4924,11 +5064,20 @@
     (path "/5a475a6b-f5c6-4f5c-845d-c51dc67de025"
       (reference "SW?") (unit 1) (value "RESET") (footprint "")
     )
+    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/047c69ed-8118-47c6-85be-ba76a79ec70c"
+      (reference "U?") (unit 1) (value "74LS245") (footprint "Package_DIP:DIP-20_W7.62mm_Socket_LongPads")
+    )
     (path "/0c0b8495-ef12-4548-89d3-aaad0eac09b6"
       (reference "U?") (unit 1) (value "CY62256-70PC") (footprint "Package_DIP:DIP-28_W15.24mm")
     )
     (path "/360288c7-42ab-4c83-bc07-e56f266df6e8"
       (reference "U?") (unit 1) (value "NE555D") (footprint "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm")
+    )
+    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/396edc42-b52d-4806-b6ca-28b3204b9bb1"
+      (reference "U?") (unit 1) (value "74HC00") (footprint "")
+    )
+    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/53559ba4-1e5c-4536-8366-eb67a1567afc"
+      (reference "U?") (unit 1) (value "28C256") (footprint "Package_DIP:DIP-28_W15.24mm_Socket_LongPads")
     )
     (path "/60d9d493-08f0-4352-abaa-44052742e635"
       (reference "U?") (unit 1) (value "74LS245") (footprint "Package_DIP:DIP-20_W7.62mm_Socket_LongPads")
@@ -4939,28 +5088,85 @@
     (path "/84c014db-ae66-469e-8f5d-24cab138a7af"
       (reference "U?") (unit 1) (value "28C256") (footprint "Package_DIP:DIP-28_W15.24mm_Socket_LongPads")
     )
+    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/858dcf5b-9c9c-4827-bc2c-8fe00084c5e6"
+      (reference "U?") (unit 1) (value "ATtiny84-20P") (footprint "Package_DIP:DIP-14_W7.62mm")
+    )
+    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/88d32f5a-4188-43e2-ae0a-3c1a0d500750"
+      (reference "U?") (unit 1) (value "W65C22SxP") (footprint "")
+    )
+    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/97f37e71-f1d7-46e7-9231-dab8f2eeb161"
+      (reference "U?") (unit 1) (value "W65C22SxP") (footprint "Package_DIP:DIP-40_W15.24mm_Socket_LongPads")
+    )
     (path "/9b75079b-c2c4-477e-8c55-ef0d0343d3d5"
       (reference "U?") (unit 1) (value "74HC00") (footprint "")
     )
     (path "/b6acde2b-be71-44ee-9903-438b62b165a2"
       (reference "U?") (unit 1) (value "W65C22SxP") (footprint "Package_DIP:DIP-40_W15.24mm_Socket_LongPads")
     )
+    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/c60c38c8-41e7-498c-8cfa-1a05866f73c0"
+      (reference "U?") (unit 1) (value "74LS08") (footprint "")
+    )
+    (path "/cc9b90a5-0c43-45c2-9570-29adffdd5447"
+      (reference "U?") (unit 1) (value "ATtiny84-20P") (footprint "Package_DIP:DIP-14_W7.62mm")
+    )
     (path "/ccd14c08-c4ab-4f62-97cd-05242c97da30"
       (reference "U?") (unit 1) (value "W65C22SxP") (footprint "")
+    )
+    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/cf5a01e8-a9be-4e84-9aa0-c1f4b57f7b20"
+      (reference "U?") (unit 1) (value "74LS02") (footprint "")
+    )
+    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/cfc5aede-aaf1-484d-a71d-7fde6f5766b7"
+      (reference "U?") (unit 1) (value "CY62256-70PC") (footprint "Package_DIP:DIP-28_W15.24mm")
     )
     (path "/d4ba973d-c535-4387-a638-737f289e743f"
       (reference "U?") (unit 1) (value "W65C02SxP") (footprint "Package_DIP:DIP-40_W15.24mm_Socket_LongPads")
     )
+    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/16d92f16-835d-47cb-887c-c0a76290a59e"
+      (reference "U?") (unit 2) (value "74LS02") (footprint "")
+    )
     (path "/1a676615-df3c-4593-9789-3558c51cbded"
       (reference "U?") (unit 2) (value "74HC00") (footprint "")
+    )
+    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/392bf95e-a066-4f31-8ab9-03adeacb1ad1"
+      (reference "U?") (unit 2) (value "74HC00") (footprint "")
+    )
+    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/9920babb-8886-48de-958d-96c19a7fc6e0"
+      (reference "U?") (unit 2) (value "74LS08") (footprint "")
+    )
+    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/43ff5995-11bc-4eed-a78b-f2e9411b9686"
+      (reference "U?") (unit 3) (value "74LS08") (footprint "")
     )
     (path "/98fa7777-1ce2-44a2-aa00-b0263af80f6b"
       (reference "U?") (unit 3) (value "74HC00") (footprint "")
     )
+    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/b2b4b31b-3690-4b61-a4de-5607da02c81e"
+      (reference "U?") (unit 3) (value "74HC00") (footprint "")
+    )
+    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/b3b777aa-d557-4e2d-92a8-84cf2fde425d"
+      (reference "U?") (unit 3) (value "74LS02") (footprint "")
+    )
+    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/5b605d39-af40-4581-bff3-c2641732e6b0"
+      (reference "U?") (unit 4) (value "74HC00") (footprint "")
+    )
+    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/6822bf7d-e2d9-40e8-8c53-382a10b80acb"
+      (reference "U?") (unit 4) (value "74LS08") (footprint "")
+    )
+    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/81168c25-5bd6-4836-b1ca-2ad0d00544e1"
+      (reference "U?") (unit 4) (value "74LS02") (footprint "")
+    )
     (path "/dfa4aa66-61ba-424a-afda-7431ab2d5b3c"
       (reference "U?") (unit 4) (value "74HC00") (footprint "")
     )
+    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/06bafd31-236f-42f3-afa3-5580a15f2ca0"
+      (reference "U?") (unit 5) (value "74LS08") (footprint "")
+    )
+    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/28990dd7-74fd-483a-b8c4-f35cb4a11005"
+      (reference "U?") (unit 5) (value "74LS02") (footprint "")
+    )
     (path "/3a4de6b1-40ee-4ccf-b155-4fae4b0427a0"
+      (reference "U?") (unit 5) (value "74HC00") (footprint "")
+    )
+    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/72e2621c-ca0e-4581-89aa-7a64ac107595"
       (reference "U?") (unit 5) (value "74HC00") (footprint "")
     )
     (path "/b56ecd17-29a6-4b87-b3a6-c1cb06bc82d7"
