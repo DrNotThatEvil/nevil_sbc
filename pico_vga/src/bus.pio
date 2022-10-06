@@ -13,9 +13,9 @@
     ; Chip enable flag
 .define PUBLIC CE (A0 + 5 + 1)
     ; Direction of level shifter
-.define PUBLIC DIR (A0 + 5 + 2)
+;.define PUBLIC DIR (A0 + 5 + 2)
     ; Output enable of level shifter
-.define PUBLIC OE (A0 + 5 + 3)
+;.define PUBLIC OE (A0 + 5 + 3)
 
 
 .program bus_read

@@ -4941,6 +4941,9 @@
     (path "/50ed873e-223c-40ba-bd13-f842c31517e1"
       (reference "#PWR?") (unit 1) (value "+5V") (footprint "")
     )
+    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/5e780c8a-8095-4edc-9f16-f5a6645ffe7a"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
     (path "/5ea4755d-f081-4b51-a390-d385836e9120"
       (reference "#PWR?") (unit 1) (value "GND") (footprint "")
     )
@@ -5073,9 +5076,6 @@
     (path "/360288c7-42ab-4c83-bc07-e56f266df6e8"
       (reference "U?") (unit 1) (value "NE555D") (footprint "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm")
     )
-    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/396edc42-b52d-4806-b6ca-28b3204b9bb1"
-      (reference "U?") (unit 1) (value "74HC00") (footprint "")
-    )
     (path "/47e5f244-199c-483d-9129-db89de2f9ca8/53559ba4-1e5c-4536-8366-eb67a1567afc"
       (reference "U?") (unit 1) (value "28C256") (footprint "Package_DIP:DIP-28_W15.24mm_Socket_LongPads")
     )
@@ -5084,6 +5084,9 @@
     )
     (path "/739670b9-612d-411f-90a4-cc986aaff431"
       (reference "U?") (unit 1) (value "74HC688") (footprint "")
+    )
+    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/757e03fb-dd73-49f4-b1bd-b61b123c5155"
+      (reference "U?") (unit 1) (value "74LS139") (footprint "Package_DIP:DIP-16_W7.62mm_Socket_LongPads")
     )
     (path "/84c014db-ae66-469e-8f5d-24cab138a7af"
       (reference "U?") (unit 1) (value "28C256") (footprint "Package_DIP:DIP-28_W15.24mm_Socket_LongPads")
@@ -5100,11 +5103,11 @@
     (path "/9b75079b-c2c4-477e-8c55-ef0d0343d3d5"
       (reference "U?") (unit 1) (value "74HC00") (footprint "")
     )
+    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/b280b3b6-19e5-4d6f-a904-bbe1339d00a5"
+      (reference "U?") (unit 1) (value "74LS04") (footprint "")
+    )
     (path "/b6acde2b-be71-44ee-9903-438b62b165a2"
       (reference "U?") (unit 1) (value "W65C22SxP") (footprint "Package_DIP:DIP-40_W15.24mm_Socket_LongPads")
-    )
-    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/c60c38c8-41e7-498c-8cfa-1a05866f73c0"
-      (reference "U?") (unit 1) (value "74LS08") (footprint "")
     )
     (path "/cc9b90a5-0c43-45c2-9570-29adffdd5447"
       (reference "U?") (unit 1) (value "ATtiny84-20P") (footprint "Package_DIP:DIP-14_W7.62mm")
@@ -5112,62 +5115,47 @@
     (path "/ccd14c08-c4ab-4f62-97cd-05242c97da30"
       (reference "U?") (unit 1) (value "W65C22SxP") (footprint "")
     )
-    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/cf5a01e8-a9be-4e84-9aa0-c1f4b57f7b20"
-      (reference "U?") (unit 1) (value "74LS02") (footprint "")
-    )
     (path "/47e5f244-199c-483d-9129-db89de2f9ca8/cfc5aede-aaf1-484d-a71d-7fde6f5766b7"
       (reference "U?") (unit 1) (value "CY62256-70PC") (footprint "Package_DIP:DIP-28_W15.24mm")
     )
     (path "/d4ba973d-c535-4387-a638-737f289e743f"
       (reference "U?") (unit 1) (value "W65C02SxP") (footprint "Package_DIP:DIP-40_W15.24mm_Socket_LongPads")
     )
-    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/16d92f16-835d-47cb-887c-c0a76290a59e"
-      (reference "U?") (unit 2) (value "74LS02") (footprint "")
-    )
     (path "/1a676615-df3c-4593-9789-3558c51cbded"
       (reference "U?") (unit 2) (value "74HC00") (footprint "")
     )
-    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/392bf95e-a066-4f31-8ab9-03adeacb1ad1"
-      (reference "U?") (unit 2) (value "74HC00") (footprint "")
+    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/20587b31-d93a-45a2-bd31-c19b52674f68"
+      (reference "U?") (unit 2) (value "74LS139") (footprint "")
     )
-    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/9920babb-8886-48de-958d-96c19a7fc6e0"
-      (reference "U?") (unit 2) (value "74LS08") (footprint "")
+    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/49c33fb6-650d-404d-a3c5-06028e6f285c"
+      (reference "U?") (unit 2) (value "74LS04") (footprint "")
     )
-    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/43ff5995-11bc-4eed-a78b-f2e9411b9686"
-      (reference "U?") (unit 3) (value "74LS08") (footprint "")
+    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/5c5328d0-d310-4611-b0df-defd5353215f"
+      (reference "U?") (unit 3) (value "74LS139") (footprint "")
+    )
+    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/776d1210-196a-4c89-af51-1d9151bdf324"
+      (reference "U?") (unit 3) (value "74LS04") (footprint "")
     )
     (path "/98fa7777-1ce2-44a2-aa00-b0263af80f6b"
       (reference "U?") (unit 3) (value "74HC00") (footprint "")
     )
-    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/b2b4b31b-3690-4b61-a4de-5607da02c81e"
-      (reference "U?") (unit 3) (value "74HC00") (footprint "")
-    )
-    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/b3b777aa-d557-4e2d-92a8-84cf2fde425d"
-      (reference "U?") (unit 3) (value "74LS02") (footprint "")
-    )
-    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/5b605d39-af40-4581-bff3-c2641732e6b0"
-      (reference "U?") (unit 4) (value "74HC00") (footprint "")
-    )
-    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/6822bf7d-e2d9-40e8-8c53-382a10b80acb"
-      (reference "U?") (unit 4) (value "74LS08") (footprint "")
-    )
-    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/81168c25-5bd6-4836-b1ca-2ad0d00544e1"
-      (reference "U?") (unit 4) (value "74LS02") (footprint "")
+    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/14532669-341a-4bf8-a278-2a534a8caa4e"
+      (reference "U?") (unit 4) (value "74LS04") (footprint "")
     )
     (path "/dfa4aa66-61ba-424a-afda-7431ab2d5b3c"
       (reference "U?") (unit 4) (value "74HC00") (footprint "")
     )
-    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/06bafd31-236f-42f3-afa3-5580a15f2ca0"
-      (reference "U?") (unit 5) (value "74LS08") (footprint "")
-    )
-    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/28990dd7-74fd-483a-b8c4-f35cb4a11005"
-      (reference "U?") (unit 5) (value "74LS02") (footprint "")
-    )
     (path "/3a4de6b1-40ee-4ccf-b155-4fae4b0427a0"
       (reference "U?") (unit 5) (value "74HC00") (footprint "")
     )
-    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/72e2621c-ca0e-4581-89aa-7a64ac107595"
-      (reference "U?") (unit 5) (value "74HC00") (footprint "")
+    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/bef1df67-9ff5-45e5-8313-8bce4855623d"
+      (reference "U?") (unit 5) (value "74LS04") (footprint "")
+    )
+    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/1fa36213-d981-40a0-bbe1-4a7e92d2afc9"
+      (reference "U?") (unit 6) (value "74LS04") (footprint "")
+    )
+    (path "/47e5f244-199c-483d-9129-db89de2f9ca8/62cdaf2e-6411-4225-98d7-138339bd9d8f"
+      (reference "U?") (unit 7) (value "74LS04") (footprint "")
     )
     (path "/b56ecd17-29a6-4b87-b3a6-c1cb06bc82d7"
       (reference "X?") (unit 1) (value "1MHz") (footprint "Oscillator:Oscillator_DIP-14")

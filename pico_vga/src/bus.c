@@ -22,7 +22,23 @@ static void bus_read_setup(PIO pio, uint sm)
     pio_sm_set_consecutive_pindirs(pio, sm, D0, 8, true);
     
     // set initial pindirs: A0 - A4
-    pio_sm_set_consecutive_pindirs(pio, sm, RWB, 5, true);
+    pio_sm_set_consecutive_pindirs(pio, sm, A0, 5, true);
 
+    // set RWB pindir
+    pio_sm_set_consecutive_pindirs(pio, sm, RWB, 1, true);
 
-}ß
+    // set CE pindir
+    pio_sm_set_consecutive_pindirs(pio, sm, CE, 1, true);
+
+    // pio 'in' inins: inputs at at the first data bit (D0)
+    sm_config_set_in_pins(&sm, D0);
+
+    //
+    sm_config_set_in
+
+    // pio 'out'
+    sm_config_set_out_pins(&sm, D0, 8);
+
+    //
+    
+}
