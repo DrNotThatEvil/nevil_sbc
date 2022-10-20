@@ -324,6 +324,10 @@
     [
       "47e5f244-199c-483d-9129-db89de2f9ca8",
       "Peripherals"
+    ],
+    [
+      "19a06a97-3541-4bb7-9bb2-2aa02e9cb4c7",
+      "IO"
     ]
   ],
   "text_variables": {}
