@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name "Rhais Connectors")(type "KiCad")(uri "${KIPRJMOD}/libs/rhais_connector-lumberg.pretty")(options "")(descr ""))
+)
