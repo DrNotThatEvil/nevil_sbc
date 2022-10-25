@@ -4576,6 +4576,9 @@
     (path "/19a06a97-3541-4bb7-9bb2-2aa02e9cb4c7/0e74ac44-f9b8-4321-b01a-c84053079ddd"
       (reference "R301") (unit 1) (value "1K") (footprint "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal")
     )
+    (path "/19a06a97-3541-4bb7-9bb2-2aa02e9cb4c7/a6d07684-3c81-40f0-a492-d612c4d989b5"
+      (reference "R302") (unit 1) (value "500R") (footprint "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal")
+    )
     (path "/19a06a97-3541-4bb7-9bb2-2aa02e9cb4c7/28a33bd9-9c30-4bcb-a107-a91c7c027964"
       (reference "R303") (unit 1) (value "1K") (footprint "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal")
     )
@@ -4584,9 +4587,6 @@
     )
     (path "/19a06a97-3541-4bb7-9bb2-2aa02e9cb4c7/813e5a98-7f77-4ff6-aa0d-8d14180e081d"
       (reference "R305") (unit 1) (value "1K") (footprint "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal")
-    )
-    (path "/19a06a97-3541-4bb7-9bb2-2aa02e9cb4c7/c15e0a34-cb8f-4788-9126-79de81f1bd73"
-      (reference "R306") (unit 1) (value "500R") (footprint "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal")
     )
     (path "/19a06a97-3541-4bb7-9bb2-2aa02e9cb4c7/b8f73e37-5138-4baf-9a79-85e24323d3ba"
       (reference "R307") (unit 1) (value "1K") (footprint "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal")
@@ -4700,16 +4700,16 @@
       (reference "U206") (unit 1) (value "ATtiny84-20P") (footprint "Package_DIP:DIP-14_W7.62mm")
     )
     (path "/47e5f244-199c-483d-9129-db89de2f9ca8/97f37e71-f1d7-46e7-9231-dab8f2eeb161"
-      (reference "U207") (unit 1) (value "W65C22SxP") (footprint "Package_DIP:DIP-40_W15.24mm_Socket_LongPads")
+      (reference "U207") (unit 1) (value "VIA0") (footprint "Package_DIP:DIP-40_W15.24mm_Socket_LongPads")
     )
     (path "/47e5f244-199c-483d-9129-db89de2f9ca8/65c23e8b-ad2f-45ee-9646-d4f9bac2c2c4"
-      (reference "U208") (unit 1) (value "W65C22SxP") (footprint "Package_DIP:DIP-40_W15.24mm_Socket_LongPads")
+      (reference "U208") (unit 1) (value "VIA1") (footprint "Package_DIP:DIP-40_W15.24mm_Socket_LongPads")
     )
     (path "/19a06a97-3541-4bb7-9bb2-2aa02e9cb4c7/ac1409e9-c52b-49a0-8e35-f212a7f20676"
       (reference "U301") (unit 1) (value "74HC245") (footprint "Package_DIP:DIP-20_W7.62mm_Socket_LongPads")
     )
     (path "/19a06a97-3541-4bb7-9bb2-2aa02e9cb4c7/1095e973-8d18-40f9-b318-cc03204b50f5"
-      (reference "U302") (unit 1) (value "Pico") (footprint "RPi_Pico:RPi_Pico_SMD_TH")
+      (reference "U302") (unit 1) (value "Pico") (footprint "RPPico:RPi_Pico_SMD_TH")
     )
     (path "/19a06a97-3541-4bb7-9bb2-2aa02e9cb4c7/8bdc750e-47b2-40a1-822d-0493b3491caa"
       (reference "U303") (unit 1) (value "74HC245") (footprint "Package_DIP:DIP-20_W7.62mm_Socket_LongPads")
