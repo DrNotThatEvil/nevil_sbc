@@ -15,3 +15,24 @@ DIR: GPIO14
 
 HSYNC: GPIO15
 VSYNC: GPIO16
+
+# Registry design
+
+0x00 - STATUS
+    0b0000 0000 
+              |
+              + -- Addr state
+
+0x01 - CONTROL
+    0b0000 0000
+              |
+              + -- Increment addr on write to data (0 add 1, 1 add 32)
+
+0x02 -
+0x03 - 
+0x04 - Res
+0x05 - Res
+0x06 - Address
+0x07 - Data
+
+

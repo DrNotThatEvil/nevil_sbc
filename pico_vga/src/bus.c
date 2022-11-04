@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <pico/stdlib.h>
 #include <hardware/dma.h>
 #include <hardware/irq.h>
 #include <hardware/pio.h>
@@ -21,8 +23,8 @@ static void bus_read_setup(PIO pio, uint sm)
     for (int i = D0; i <= DIR; i++)
         pio_gpio_init(pio, i);
 
-    for (int i = D0; i < CS; i++)
-        pio_set_pulls(i, false, true);
+    for (int i = D0; i < CE; i++)
+        gpio_set_pulls(i, false, true);
 
     // set initial pindirs: D0 - D7 are (also) output
     pio_sm_set_consecutive_pindirs(pio, sm, D0, 8, true);
@@ -37,27 +39,27 @@ static void bus_read_setup(PIO pio, uint sm)
     pio_sm_set_consecutive_pindirs(pio, sm, A0, 3, true);
 
     // set RWB pindir
-    pio_sm_set_consecutive_pindirs(pio, sm, IRQ, 1, true);
+    pio_sm_set_consecutive_pindirs(pio, sm, CIRQ, 1, true);
 
     // set CE pindir
     pio_sm_set_consecutive_pindirs(pio, sm, DIR, 1, true);
 
     // pio 'in' inins: inputs at at the first data bit (D0)
-    sm_config_set_in_pins(&sm, D0);
+    sm_config_set_in_pins(&c, D0);
 
     // set out pins    
-    sm_config_set_out_pins(&sm, D0, 8);
+    sm_config_set_out_pins(&c, D0, 8);
 
     // set DIR as set pin. 
-    sm_config_set_set_pins(&sm, DIR, 1);
+    sm_config_set_set_pins(&c, DIR, 1);
 
     // Reading from rxFIFO: shift to left, autopull disabled
-    sm_config_set_in_shift(&sm, false, false, 32);
+    sm_config_set_in_shift(&c, false, false, 32);
 
     // Writing from rxFIFO: shift to right, autopull disabled
-    sm_config_set_out_shift(&sm, true, false, 32);
+    sm_config_set_out_shift(&c, true, false, 32);
 
-    pio_sm_init(pio, sm, program_offset, &sm);
+    pio_sm_init(pio, sm, program_offset, &c);
     
     pio_sm_set_enabled(pio, sm, true);
 }
@@ -72,8 +74,8 @@ static void bus_write_setup(PIO pio, uint sm)
     for (int i = D0; i <= DIR; i++)
         pio_gpio_init(pio, i);
 
-    for (int i = D0; i < CS; i++)
-        pio_set_pulls(i, false, true);
+    for (int i = D0; i < CE; i++)
+        gpio_set_pulls(i, false, true);
 
     // set initial pindirs: D0 - D7 are (also) output
     pio_sm_set_consecutive_pindirs(pio, sm, D0, 8, true);
@@ -88,28 +90,32 @@ static void bus_write_setup(PIO pio, uint sm)
     pio_sm_set_consecutive_pindirs(pio, sm, A0, 3, true);
 
     // set RWB pindir
-    pio_sm_set_consecutive_pindirs(pio, sm, IRQ, 1, true);
+    pio_sm_set_consecutive_pindirs(pio, sm, CIRQ, 1, true);
 
     // set CE pindir
     pio_sm_set_consecutive_pindirs(pio, sm, DIR, 1, true);
 
     // pio 'in' inins: inputs at at the first data bit (D0)
-    sm_config_set_in_pins(&sm, D0);
+    sm_config_set_in_pins(&c, D0);
 
     // set out pins    
-    sm_config_set_out_pins(&sm, D0, 8);
+    sm_config_set_out_pins(&c, D0, 8);
 
     // set DIR as set pin. 
-    sm_config_set_set_pins(&sm, DIR, 1);
+    sm_config_set_set_pins(&c, DIR, 1);
 
     // Reading from rxFIFO: shift to left, autopull disabled
-    sm_config_set_in_shift(&sm, false, false, 32);
+    sm_config_set_in_shift(&c, false, false, 32);
 
     // Writing from rxFIFO: shift to right, autopull disabled
-    sm_config_set_out_shift(&sm, true, false, 32);
+    sm_config_set_out_shift(&c, true, false, 32);
+
+    pio_sm_init(pio, sm, program_offset, &c);
+
+    pio_sm_set_enabled(pio, sm, true);
 }
 
-void bus_run()
+void bus_loop()
 {
     uint32_t addr_data;
     uint8_t data;
@@ -121,6 +127,16 @@ void bus_run()
 
     uint bitoffs;
     const uint32_t mask = PIO_FLEVEL_RX0_BITS >> PIO_FLEVEL_RX0_LSB;
+
+    struct reg_state _reg_state = {
+        .r_status = 0,
+        .r_cntl = 0,
+        .r_addr_lo = 0,
+        .r_addr_hi = 0
+    };
+
+    printf("starting loop..\n");
+    
     while (1)
     {
         bitoffs = PIO_FLEVEL_RX0_LSB + BUS_READ_SM * (PIO_FLEVEL_RX1_LSB - PIO_FLEVEL_RX0_LSB);
@@ -129,16 +145,29 @@ void bus_run()
             addr_data = CONFIG_BUS_PIO->rxf[BUS_READ_SM];
             address = addr_data >> 10;
 
+            printf("Reading address %d\n", address);
 
+            CONFIG_BUS_PIO->txf[BUS_READ_SM] = 0;
         }
 
         bitoffs = PIO_FLEVEL_RX0_LSB + BUS_WRITE_SM * (PIO_FLEVEL_RX1_LSB - PIO_FLEVEL_RX0_LSB);
         if ((CONFIG_BUS_PIO->flevel >> bitoffs) & mask > 0)
         {
-            addr_data = CONFIG_BUS_PIO->rxf[BUS_READ_SM];
+            addr_data = CONFIG_BUS_PIO->rxf[BUS_WRITE_SM];
+            data = addr_data & 0xFF;
             address = addr_data >> 10;
 
+            if(address == 6) {
+                if(_reg_state.r_cntl & 1 > 0) {
+                    _reg_state.r_addr_hi = data;
+                } else { 
+                    _reg_state.r_addr_lo = data;
+                }
 
+                _reg_state.r_cntl = (_reg_state.r_cntl ^ 1);
+            }
+
+            printf("Writing %d to addr %d\n", data, address);
         }
     }
 }
@@ -149,5 +178,8 @@ void bus_init()
     bus_write_setup(CONFIG_BUS_PIO, BUS_WRITE_SM);
 
     // Fill regs and data ect.
+    stdio_init_all();
+
+
      
 }

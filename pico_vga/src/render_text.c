@@ -53,7 +53,7 @@ void __time_critical_func(render_text)() {
 
 
 void __time_critical_func(render_text_line)(unsigned int line) {
-    const uint8_t *page = (soft_switches & SOFTSW_PAGE_2) ? text_memory + 1024 : text_memory;
+    const uint8_t *page = text_memory;
     const uint8_t *line_buf = page + ((line & 0x7) << 7) + (((line >> 3) & 0x3) * 40);
 
     for(uint glyph_line=0; glyph_line < 8; glyph_line++) {

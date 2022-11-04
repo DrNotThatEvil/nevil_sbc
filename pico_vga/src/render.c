@@ -4,6 +4,7 @@
 #include "buffers.h"
 #include "render.h"
 #include "textfont.h"
+#include "test_screen.h"
 #include "vga.h"
 
 
@@ -115,6 +116,9 @@ static void __noinline __time_critical_func(render_testpattern)() {
 void render_init() {
     // Initialize the character generator ROM
     memcpy(character_rom, default_character_rom, sizeof(character_rom));
+    
+    //memset(text_memory, 0x
+    memcpy(text_memory, default_screen_buffer, sizeof(default_screen_buffer));
 }
 
 

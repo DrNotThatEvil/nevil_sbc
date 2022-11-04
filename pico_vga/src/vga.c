@@ -93,8 +93,8 @@ static void vga_data_setup(PIO pio, uint sm) {
     sm_config_set_clkdiv(&c, CONFIG_SYSCLOCK / (2*PIXEL_FREQ));  // 2 * PIXEL_FREQ
 
     // Map the state machine's OUT pin group to the data pins
-    sm_config_set_out_pins(&c, CONFIG_PIN_RGB_BASE, 9);
-    sm_config_set_set_pins(&c, CONFIG_PIN_RGB_BASE, 9);
+    sm_config_set_out_pins(&c, CONFIG_PIN_RGB_BASE, 3);
+    sm_config_set_set_pins(&c, CONFIG_PIN_RGB_BASE, 3);
 
     // Enable autopull every 32 bits  (2 x (9 data + 5 jump + 2 pad) bits)
     sm_config_set_out_shift(&c, true, true, 32);
@@ -103,8 +103,8 @@ static void vga_data_setup(PIO pio, uint sm) {
     sm_config_set_fifo_join(&c, PIO_FIFO_JOIN_TX);
 
     // Configure the pins as outputs & connect to the PIO
-    pio_sm_set_consecutive_pindirs(pio, sm, CONFIG_PIN_RGB_BASE, 9, true);
-    for(int i=0; i < 9; i++) {
+    pio_sm_set_consecutive_pindirs(pio, sm, CONFIG_PIN_RGB_BASE, 3, true);
+    for(int i=0; i < 3; i++) {
         pio_gpio_init(pio, CONFIG_PIN_RGB_BASE+i);
     }
 

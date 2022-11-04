@@ -11,11 +11,11 @@
     ; Read write signal
 .define PUBLIC RW (CE + 1)
     ; The starting point of the 16 bit Address A0 - A2 (3 bits used)
-.define PUBLIC A0 (CE + 1)
+.define PUBLIC A0 (RW + 1)
     ; IRQ flag for IRQ request to cpu
-.define PUBLIC IRQ (A0 + 3)
+.define PUBLIC CIRQ (A0 + 3)
     ; Direction of data level shifter
-.define PUBLIC DIR (A0 + 3 + 1
+.define PUBLIC DIR (CIRQ + 1)
 
 .program bus_read
 
@@ -24,7 +24,7 @@
     ; set the default: OE=1 and DIR=0
     set pins 0b0
     ; wait for RD to become 0
-    wait 0 GPIO RW
+    wait 1 GPIO RW
     wait 1 GPIO CE
     ; read the data (8 bits) and addres (2 + 3 bits)
     in pins 13
@@ -44,11 +44,12 @@
 .program bus_write
 
 .wrap_target
+start:
     ; set pins:
     ; set the default: OE=1 and DIR=0
     set pins 0b0
     ; wait for WR to become 0
-    wait 1 GPIO RW
+    wait 0 GPIO RW
     wait 1 GPIO CE
     ; set OE=0 and DIR=0
     set pins 0b1
