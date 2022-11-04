@@ -5,29 +5,28 @@
 
     ; set the pin assignment:
     ; The starting point of the 8 bit Data D0 - D7
-.define PUBLIC D0 2
-    ; The starting point of the 16 bit Address A0 - A15
-.define PUBLIC A0 (D0 + 8)
-    ; Read Write flag
-.define PUBLIC RWB (A0 + 5 + 0)
-    ; Chip enable flag
-.define PUBLIC CE (A0 + 5 + 1)
-    ; Direction of level shifter
-;.define PUBLIC DIR (A0 + 5 + 2)
-    ; Output enable of level shifter
-;.define PUBLIC OE (A0 + 5 + 3)
-
+.define PUBLIC D0 0
+    ; Chip enable (and clk)
+.define PUBLIC CE (D0 + 8)
+    ; Read write signal
+.define PUBLIC RW (CE + 1)
+    ; The starting point of the 16 bit Address A0 - A2 (3 bits used)
+.define PUBLIC A0 (CE + 1)
+    ; IRQ flag for IRQ request to cpu
+.define PUBLIC IRQ (A0 + 3)
+    ; Direction of data level shifter
+.define PUBLIC DIR (A0 + 3 + 1
 
 .program bus_read
 
 .wrap_target
     ; set pins:  MSB = OE, LSB = DIR, so 0b10 is OE=1 and DIR=0
     ; set the default: OE=1 and DIR=0
-    ; set pins 0b10
+    set pins 0b0
     ; wait for RD to become 0
-    wait 0 GPIO RWB
+    wait 0 GPIO RW
     wait 1 GPIO CE
-    ; read the data (8 bits) and addres (5 bits)
+    ; read the data (8 bits) and addres (2 + 3 bits)
     in pins 13
     ; push the data and address to the RxFIFO
     push
@@ -45,15 +44,15 @@
 .program bus_write
 
 .wrap_target
-    ; set pins:  MSB = OE, LSB = DIR, so 0b10 is OE=1 and DIR=0
+    ; set pins:
     ; set the default: OE=1 and DIR=0
-    ;  set pins 0b10
+    set pins 0b0
     ; wait for WR to become 0
-    wait 1 GPIO RWB
+    wait 1 GPIO RW
     wait 1 GPIO CE
     ; set OE=0 and DIR=0
-    ; set pins 0b00
-    ; read the data (8 bits) and addres (5 bits)
+    set pins 0b1
+    ; read the data (8 bits) and addres (2 + 3 bits)
     in pins 13
     ; push the data and address to the RxFIFO
     push

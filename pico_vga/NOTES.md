@@ -1,0 +1,17 @@
+# PCB Design notes.
+Data bus: GPIO0  - GPIO7
+Addr bus: GPIO10 - GPIO12
+VGA bus:  GPIO17 - GPIO28
+    R: GPIO17 - GPIO19
+    G: GPIO20 - GPIO22
+    B: GPIO26 - GPIO28
+
+
+Control signals:
+CS: GPIO8
+R/W: GPIO9
+IRQ: GPIO13
+DIR: GPIO14
+
+HSYNC: GPIO15
+VSYNC: GPIO16
