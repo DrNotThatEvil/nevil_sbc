@@ -3,7 +3,7 @@
 
 #include <stdint.h>
 
-extern const uint8_t default_screen_buffer[11];
+extern const uint8_t default_screen_buffer[12];
 
 
 #endif

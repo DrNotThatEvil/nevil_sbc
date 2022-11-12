@@ -1,8 +1,8 @@
 add_executable(nevil_sbc_vga)
 
 # compile pio headers
-#pico_generate_pio_header(nevil_sbc_vga
-#    ${CMAKE_CURRENT_SOURCE_DIR}/vga.pio)
+pico_generate_pio_header(nevil_sbc_vga
+    ${CMAKE_CURRENT_SOURCE_DIR}/vga.pio)
 
 pico_generate_pio_header(nevil_sbc_vga
     ${CMAKE_CURRENT_SOURCE_DIR}/bus.pio)

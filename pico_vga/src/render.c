@@ -117,13 +117,15 @@ void render_init() {
     // Initialize the character generator ROM
     memcpy(character_rom, default_character_rom, sizeof(character_rom));
     
-    //memset(text_memory, 0x
+    memset(text_memory, (int)0xA0, sizeof(text_memory));
     memcpy(text_memory, default_screen_buffer, sizeof(default_screen_buffer));
 }
 
 
 void render_loop() {
     while(1) {
+        update_text_flasher();
+        
         render_text();
     }
 }

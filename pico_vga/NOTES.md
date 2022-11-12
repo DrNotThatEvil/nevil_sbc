@@ -26,10 +26,10 @@ VSYNC: GPIO16
 0x01 - CONTROL
     0b0000 0000
               |
-              + -- Increment addr on write to data (0 add 1, 1 add 32)
+              + -- Increment addr on write to data (0 add 1, 1 add line)
 
-0x02 -
-0x03 - 
+0x02 - Res
+0x03 - Res
 0x04 - Res
 0x05 - Res
 0x06 - Address

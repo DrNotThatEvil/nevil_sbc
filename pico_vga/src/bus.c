@@ -5,12 +5,18 @@
 #include <hardware/pio.h>
 #include <hardware/sync.h>
 #include "config.h"
+#include "buffers.h"
 #include "bus.pio.h"
 #include "bus.h"
 
 enum {
     BUS_READ_SM = 0,
     BUS_WRITE_SM = 1,
+};
+
+enum {
+    CTRL_ADDR_INC_32 = 1 << 0,
+    CNTL_SOMETHING = 1 << 1,
 };
 
 static void bus_read_setup(PIO pio, uint sm)
@@ -157,14 +163,33 @@ void bus_loop()
             data = addr_data & 0xFF;
             address = addr_data >> 10;
 
+            if(address == 1) {
+                _reg_state.r_cntl = data;
+            }
+
             if(address == 6) {
-                if(_reg_state.r_cntl & 1 > 0) {
+                if(_reg_state.r_status & 1 > 0) {
                     _reg_state.r_addr_hi = data;
                 } else { 
                     _reg_state.r_addr_lo = data;
                 }
 
-                _reg_state.r_cntl = (_reg_state.r_cntl ^ 1);
+                _reg_state.r_status = (_reg_state.r_status ^ 1);
+            }
+
+            if(address == 7) {
+                uint_fast16_t t_addr = (uint_fast16_t)_reg_state.r_addr_hi << 8 | _reg_state.r_addr_lo;
+                text_memory[(0x7FF & t_addr)] = data;
+                
+                if(_reg_state.r_cntl & CTRL_ADDR_INC_32) {
+                    t_addr += ((0x1 & 0x7) << 7) + (((0x1 >> 3) & 0x3) * 40);
+                } else {
+                    t_addr = t_addr + 1;
+                }
+
+                _reg_state.r_addr_hi = (uint_fast8_t)((t_addr & 0xFF00) >> 8);
+                _reg_state.r_addr_lo = (uint_fast8_t)((t_addr & 0x00FF));
+
             }
 
             printf("Writing %d to addr %d\n", data, address);
