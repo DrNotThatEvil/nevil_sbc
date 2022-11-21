@@ -1,0 +1,4 @@
+Fix, PICO_IRQ should be set high but it's not set to anything.
+This probably triggers a IRQB routine on the cpu that never gets resolved.
+
+Fix then you got time thx.
